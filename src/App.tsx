@@ -138,8 +138,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <TopBar theme={theme} onToggleTheme={toggleTheme} session={session} cafeName={data.settings.name} onLogout={handleLogout} />
+      <div className="flex-1">
       {!session ? (
         <Login cafeName={data.settings.name} ownerName={data.settings.ownerName} onLogin={handleLogin} onReset={handleReset} />
       ) : session.role === "owner" ? (
@@ -163,6 +164,8 @@ export default function App() {
       ) : (
         <Guest data={data} dataRef={dataRef} guestName={session.name} addOrder={addOrder} addReservation={addReservation} onLogout={handleLogout} />
       )}
+      </div>
+      <Footer cafeName={data.settings.name} />
       {toast && (
         <div className="rise fixed bottom-5 left-1/2 z-[70] -translate-x-1/2 rounded-full border border-line bg-panel px-4 py-2 text-sm shadow-2xl">
           {toast}
@@ -215,5 +218,39 @@ function TopBar({
         </div>
       </div>
     </header>
+  );
+}
+function Footer({ cafeName }: { cafeName: string }) {
+  return (
+    <footer className="border-t border-line bg-panel/60">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-4 text-center sm:flex-row sm:text-left">
+        <p className="text-xs text-muted">© {new Date().getFullYear()} {cafeName} · Concept demo with sample data</p>
+        <a
+          href="https://ks-digital-works.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-2 text-xs font-medium text-muted transition hover:text-foreground"
+        >
+          Powered by
+          <KsLogo size={20} />
+          <span className="font-semibold tracking-wide">KS Digital</span>
+        </a>
+      </div>
+    </footer>
+  );
+}
+
+function KsLogo({ size = 20 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      className="transition-transform duration-300 group-hover:scale-110"
+    >
+      <rect width="32" height="32" rx="7" fill="#00a8ff" />
+      <path d="M9.2 24V8h2.6l4.3 8.1L20.4 8H23v16h-2.9v-9.4l-4 7.4-4-7.4V24z" fill="#050a18" />
+    </svg>
   );
 }

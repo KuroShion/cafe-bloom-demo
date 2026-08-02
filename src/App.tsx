@@ -235,7 +235,7 @@ function Footer({ cafeName }: { cafeName: string }) {
           <img
             src="/ks-logo.png"
             alt="KS Digital"
-            className="h-7 w-auto transition-transform duration-300 group-hover:scale-105"
+            className="h-8 w-auto rounded-full border-2 border-accent/40 shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-transform duration-300 group-hover:scale-105"
           />
         </a>
       </div>

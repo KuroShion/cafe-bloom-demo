@@ -232,61 +232,13 @@ function Footer({ cafeName }: { cafeName: string }) {
           className="group flex items-center gap-2 text-xs font-medium text-muted transition hover:text-foreground"
         >
           Powered by
-          <KsWordmark size={132} />
+          <img
+            src="/ks-logo.png"
+            alt="KS Digital"
+            className="h-7 w-auto transition-transform duration-300 group-hover:scale-105"
+          />
         </a>
       </div>
     </footer>
-  );
-}
-
-
-function KsWordmark({ size = 132 }: { size?: number }) {
-  const gradId = "ks-digital-grad";
-  const glowId = "ks-digital-glow";
-  return (
-    <svg
-      width={size}
-      height={Math.round(size * 0.3)}
-      viewBox="0 0 120 36"
-      aria-hidden="true"
-      className="transition-transform duration-300 group-hover:scale-105"
-    >
-      <defs>
-        <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#7fd4ff" />
-          <stop offset="0.45" stopColor="#ffffff" />
-          <stop offset="1" stopColor="#00a8ff" />
-        </linearGradient>
-        <filter id={glowId} x="-20%" y="-40%" width="140%" height="180%">
-          <feGaussianBlur stdDeviation="1.6" />
-        </filter>
-      </defs>
-      <text
-        x="60"
-        y="27"
-        textAnchor="middle"
-        fontFamily="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif"
-        fontSize="17"
-        fontWeight="800"
-        letterSpacing="4.5"
-        fill="#00a8ff"
-        filter={`url(#${glowId})`}
-        opacity="0.55"
-      >
-        KS DIGITAL
-      </text>
-      <text
-        x="60"
-        y="27"
-        textAnchor="middle"
-        fontFamily="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif"
-        fontSize="17"
-        fontWeight="800"
-        letterSpacing="4.5"
-        fill={`url(#${gradId})`}
-      >
-        KS DIGITAL
-      </text>
-    </svg>
   );
 }

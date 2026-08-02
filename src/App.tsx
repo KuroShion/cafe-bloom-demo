@@ -250,7 +250,18 @@ function KsLogo({ size = 20 }: { size?: number }) {
       className="transition-transform duration-300 group-hover:scale-110"
     >
       <rect width="32" height="32" rx="7" fill="#00a8ff" />
-      <path d="M9.2 24V8h2.6l4.3 8.1L20.4 8H23v16h-2.9v-9.4l-4 7.4-4-7.4V24z" fill="#050a18" />
+      <text
+        x="16"
+        y="22"
+        text-anchor="middle"
+        font-family="Georgia, &apos;Times New Roman&apos;, serif"
+        font-size="14"
+        font-weight="bold"
+        letter-spacing="0.5"
+        fill="#050a18"
+      >
+        KS
+      </text>
     </svg>
   );
 }

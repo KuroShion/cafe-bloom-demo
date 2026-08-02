@@ -233,7 +233,7 @@ function Footer({ cafeName }: { cafeName: string }) {
         >
           Powered by
           <img
-            src="/ks-logo.png"
+            src="/ks-logo-transparent.png"
             alt="KS Digital"
             className="h-7 w-auto transition-transform duration-300 group-hover:scale-105"
           />

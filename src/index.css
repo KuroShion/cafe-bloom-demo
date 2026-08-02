@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --background: #17130e;
+  --foreground: #f6efe3;
+  --ink: #17130e;
+  --panel: #201a13;
+  --panel-2: #2a2118;
+  --line: #3a2f22;
+  --cream: #f6efe3;
+  --muted: #a8987f;
+  --accent: #8fc07e;
+  --terracotta: #e08a5f;
+  --success: #3fae6a;
+  --danger: #e25563;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --background: #faf5ec;
+  --foreground: #2b2118;
+  --ink: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f3ecdf;
+  --line: #e7dcc8;
+  --cream: #2b2118;
+  --muted: #8a7a63;
+  --accent: #4f7d3f;
+  --terracotta: #c45f33;
+  --success: #2f8f5a;
+  --danger: #cf4352;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-line: var(--line);
+  --color-cream: var(--cream);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-terracotta: var(--terracotta);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --font-display: Georgia, "Times New Roman", serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-display {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.45s ease both;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.floaty {
+  animation: floaty 5s ease-in-out infinite;
+}

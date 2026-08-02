@@ -229,14 +229,12 @@ function Footer({ cafeName }: { cafeName: string }) {
           href="https://ks-digital-works.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-2 text-xs font-medium text-muted transition hover:text-foreground"
+          className="group flex flex-col items-center gap-2 rounded-2xl border border-line bg-panel-2 px-5 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50"
         >
-          Powered by
-          <img
-            src="/ks-logo.png"
-            alt="KS Digital"
-            className="h-8 w-auto rounded-full border-2 border-accent/40 shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-transform duration-300 group-hover:scale-105"
-          />
+          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted">Powered by</span>
+          <span className="block w-fit overflow-hidden rounded-lg border border-accent/30">
+            <img src="/ks-logo.png" alt="KS Digital" className="block h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
+          </span>
         </a>
       </div>
     </footer>
